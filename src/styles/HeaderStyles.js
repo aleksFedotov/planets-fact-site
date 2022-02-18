@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import burger from '../assets/icon-hamburger.svg';
+import chevron from '../assets/icon-chevron.svg';
 
 export const HeaderContainer = styled.header`
   position: absolute;
@@ -31,7 +32,7 @@ export const Logo = styled.p`
   font-size: 2.8rem;
   letter-spacing: -1px;
 `;
-export const NavigationDesktop = styled.nav`
+export const Navigation = styled.nav`
   max-width: 66.5rem;
   width: 100%;
   display: block;
@@ -91,24 +92,9 @@ export const Burger = styled.div`
   height: 2.5rem;
   width: 2.5rem;
   cursor: pointer;
-`;
+  display: none;
 
-export const NavigationMobile = styled.nav`
-  width: 100%;
-  height: 100vh;
-  padding: 4.5rem 2.4rem;
-  display: block;
-  background-color: var(--bg-main);
-`;
-
-export const NavListMobile = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-
-  width: 100%;
-`;
-
-export const NavListItemMobile = styled.li`
-  width: 100%;
+  @media (max-width: 600px) {
+    display: block;
+  }
 `;

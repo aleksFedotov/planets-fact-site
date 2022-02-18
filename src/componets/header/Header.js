@@ -1,14 +1,13 @@
 import React from 'react';
-import { useState } from 'react';
 
 import {
   HeaderContainer,
   Logo,
-  NavigationDesktop,
+  Navigation,
   NavList,
   NavListItem,
   Burger,
-} from '../styles/HeaderStyles';
+} from '../../styles/HeaderStyles';
 
 const planets = [
   'mercury',
@@ -21,18 +20,15 @@ const planets = [
   'neptune',
 ];
 
-const Header = () => {
-  const [burgerMenu, setBurgerMenu] = useState(false);
-
+const Header = (props) => {
   const burgerHandler = () => {
-    setBurgerMenu((prevState) => !prevState);
+    props.burgerToggle();
   };
 
-  console.log(burgerMenu);
   return (
     <HeaderContainer>
       <Logo>the planets</Logo>
-      <NavigationDesktop>
+      <Navigation>
         <NavList>
           {planets.map((planet) => (
             <NavListItem key={planet} planet={planet}>
@@ -40,7 +36,7 @@ const Header = () => {
             </NavListItem>
           ))}
         </NavList>
-      </NavigationDesktop>
+      </Navigation>
       <Burger onClick={burgerHandler} />
     </HeaderContainer>
   );
