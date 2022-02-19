@@ -12,14 +12,14 @@ const GlobalStyle = createGlobalStyle`
 --bg-main:#070724;
 
 
---mercury:#419EBB;
---venus:#EDA249;
---earth:#6f2ed6;
---mars:#D14C32;
---jupiter:#D83A34;
---saturn:#CD5120;
---uranus:#1ec2a4;
---neptune:#2d68f0;
+--Mercury:#419EBB;
+--Venus:#EDA249;
+--Earth:#6f2ed6;
+--Mars:#D14C32;
+--Jupiter:#D83A34;
+--Saturn:#CD5120;
+--Uranus:#1ec2a4;
+--Neptune:#2d68f0;
 
 
 
@@ -58,7 +58,7 @@ h1,h2 {
  
   min-height: 100vh;
   width: 100%;
-  padding: 2rem;
+  
   
 }
 `;

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import data from '../../data.json';
 
 import {
   HeaderContainer,
@@ -7,22 +9,15 @@ import {
   NavList,
   NavListItem,
   Burger,
-} from '../../styles/HeaderStyles';
-
-const planets = [
-  'mercury',
-  'venus',
-  'earth',
-  'mars',
-  'jupiter',
-  'saturn',
-  'uranus',
-  'neptune',
-];
+  NavigationLink,
+} from './HeaderStyles';
 
 const Header = (props) => {
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+
   const burgerHandler = () => {
     props.burgerToggle();
+    setIsMobileOpen((prevState) => !prevState);
   };
 
   return (
@@ -30,14 +25,20 @@ const Header = (props) => {
       <Logo>the planets</Logo>
       <Navigation>
         <NavList>
-          {planets.map((planet) => (
-            <NavListItem key={planet} planet={planet}>
-              <h4>{planet}</h4>
+          {data.map((planet, ind) => (
+            <NavListItem key={ind} planet={planet.name}>
+              <NavigationLink
+                to={`/${planet.name.toLowerCase()}`}
+                className={(navData) => (navData.isActive ? 'active' : '')}
+                planet={planet.name}
+              >
+                <h4>{planet.name}</h4>
+              </NavigationLink>
             </NavListItem>
           ))}
         </NavList>
       </Navigation>
-      <Burger onClick={burgerHandler} />
+      <Burger onClick={burgerHandler} isOpen={isMobileOpen} />
     </HeaderContainer>
   );
 };

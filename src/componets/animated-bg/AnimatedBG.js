@@ -23,11 +23,11 @@ const Stars = styled.div`
   background: transparent url(${bgStarts}) repeat top center;
 
   &.static {
-    z-index: 0;
+    z-index: -1;
   }
 
   &.moving {
-    z-index: 1;
+    z-index: -2;
     animation: ${StarsAnim} 200s linear infinite;
   }
 `;

@@ -1,11 +1,8 @@
 import styled from 'styled-components';
-import burger from '../assets/icon-hamburger.svg';
-import chevron from '../assets/icon-chevron.svg';
+import burger from '../../assets/icon-hamburger.svg';
+import { NavLink } from 'react-router-dom';
 
 export const HeaderContainer = styled.header`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
 
   display: flex;
@@ -58,6 +55,15 @@ export const NavListItem = styled.li`
   align-items: center;
   opacity: 0.75;
 
+  &:hover {
+    opacity: 1;
+  }
+`;
+
+export const NavigationLink = styled(NavLink)`
+  text-decoration: none;
+  color: #fff;
+
   &::after {
     position: absolute;
     content: '';
@@ -71,11 +77,11 @@ export const NavListItem = styled.li`
     transition: transform 250ms ease-in-out;
   }
 
-  &:hover {
-    opacity: 1;
+  &:hover::after {
+    transform: scale(1);
   }
 
-  &:hover::after {
+  &.active::after {
     transform: scale(1);
   }
 

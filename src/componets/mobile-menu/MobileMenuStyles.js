@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import chevron from '../assets/icon-chevron.svg';
+import { NavLink } from 'react-router-dom';
+import chevron from '../../assets/icon-chevron.svg';
+import { motion } from 'framer-motion';
 
 export const NavigationMobile = styled.nav`
   position: absolute;
@@ -11,9 +13,10 @@ export const NavigationMobile = styled.nav`
   display: block;
   background-color: var(--bg-main);
   z-index: 3;
+  overflow: hidden;
 `;
 
-export const NavListMobile = styled.ul`
+export const NavListMobile = styled(motion.ul)`
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -21,19 +24,18 @@ export const NavListMobile = styled.ul`
   width: 100%;
 `;
 
-export const NavListItemMobile = styled.li`
+export const NavListItemMobile = styled(motion.li)`
   width: 100%;
   padding: 2.2rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2.4rem;
+
+  cursor: pointer;
 
   &:not(:last-child) {
     border-bottom: 1px solid #979797;
   }
 
   h3 {
+    margin-top: 4px;
     font-size: 1.5rem;
     letter-spacing: 2.6px;
     text-transform: uppercase;
@@ -54,9 +56,20 @@ export const MiniPlanet = styled.div`
 `;
 
 export const Chevron = styled.div`
-  height: 0.8rem;
-  width: 0.6rem;
+  height: 1rem;
+  width: 1rem;
   background-image: url(${chevron});
   margin-right: 0.6rem;
   justify-self: flex-end;
+  background-size: contain;
+  background-repeat: no-repeat;
+`;
+
+export const NavigationLink = styled(NavLink)`
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.4rem;
 `;
