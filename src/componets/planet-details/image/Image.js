@@ -1,18 +1,21 @@
 import React from 'react';
 
-import { ImageContainer, Illustration } from './ImageStyles';
+import { ImageContainer, Illustration, Geology } from './ImageStyles';
 
 const Image = (props) => {
-  let imgSource = require(`../../../assets/planet-${props.planet}.svg`);
+  const name = props.planet.toLowerCase();
 
-  if (props.controller === 'internal structure') {
-    imgSource = require(`../../../assets/planet-${props.planet}-internal.svg`);
-  } else if (props.controller === 'surface geology') {
+  let imgSource = require(`../../../assets/planet-${name}.svg`);
+  let imgGeologySrc = require(`../../../assets/geology-${name}.png`);
+
+  if (props.controller === 'structure') {
+    imgSource = require(`../../../assets/planet-${name}-internal.svg`);
   }
-
   return (
     <ImageContainer>
-      <Illustration imgSrc={imgSource}></Illustration>
+      <Illustration imgSrc={imgSource}>
+        {props.geo && <Geology geologyImg={imgGeologySrc} />}
+      </Illustration>
     </ImageContainer>
   );
 };
