@@ -21,11 +21,7 @@ const GlobalStyle = createGlobalStyle`
 --Uranus:#1ec2a4;
 --Neptune:#2d68f0;
 
-
-
-
 }
-
 
 *,
 *::after,
@@ -36,7 +32,6 @@ const GlobalStyle = createGlobalStyle`
 }
 
 
-
 html {
     font-size: 62.5%;
 }
@@ -44,7 +39,8 @@ html {
 body {
     font-size: 1.4rem;
     font-family: 'Spartan', sans-serif;
-  
+    min-height:100vh;
+
     background: var(--bg-main);
     color: var(--text-main);
     
@@ -55,12 +51,12 @@ h1,h2 {
 }
 
 #root{
- 
-  min-height: 100vh;
-  width: 100%;
-  
-  
+    position: relative;
+    min-height: inherit;
+    width: 100%;
 }
+
+
 `;
 
 export default GlobalStyle;

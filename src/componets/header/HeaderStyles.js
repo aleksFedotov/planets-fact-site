@@ -12,12 +12,12 @@ export const HeaderContainer = styled.header`
   z-index: 3;
   border-bottom: 1px solid #979797;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1010px) {
     flex-direction: column;
     gap: 4.4rem;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     flex-direction: row;
     gap: 0;
   }
@@ -34,7 +34,7 @@ export const Navigation = styled.nav`
   width: 100%;
   display: block;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     display: none;
   }
 `;
@@ -85,7 +85,7 @@ export const NavigationLink = styled(NavLink)`
     transform: scale(1);
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1010px) {
     &::after {
       display: none;
     }
@@ -100,7 +100,7 @@ export const Burger = styled.div`
   cursor: pointer;
   display: none;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     display: block;
   }
 `;

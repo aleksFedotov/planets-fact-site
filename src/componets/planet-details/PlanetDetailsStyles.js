@@ -2,10 +2,15 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
   width: 100%;
-  min-height: 100vh;
-  padding: 0 2rem;
-  padding-bottom: 2rem;
+  height: 100%;
+  padding: 0 4rem 3.6rem;
+
   margin-top: 10rem;
+
+  @media (max-width: 700px) {
+    margin-top: 0rem;
+    padding: 0 0 3.6rem;
+  }
 `;
 
 export const Container = styled.div`
@@ -20,5 +25,9 @@ export const Container = styled.div`
   @media (max-width: 1010px) {
     grid-template-areas: 'Image Image' 'MainInfo Controllers' 'DetailInfo DetailInfo';
     grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 700px) {
+    display: block;
   }
 `;
