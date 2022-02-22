@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import data from '../../data.json';
 
 import {
-  HeaderContainer,
+  Header,
+  HeaderContaainer,
   Logo,
   Navigation,
   NavList,
@@ -12,7 +13,7 @@ import {
   NavigationLink,
 } from './HeaderStyles';
 
-const Header = (props) => {
+const HeaderComponent = (props) => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   const burgerHandler = () => {
@@ -20,27 +21,48 @@ const Header = (props) => {
     setIsMobileOpen((prevState) => !prevState);
   };
 
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: { duration: 1.5 },
+    },
+    exit: {
+      opacity: 0,
+      transition: { duration: 1 },
+    },
+  };
+
   return (
-    <HeaderContainer>
-      <Logo>the planets</Logo>
-      <Navigation>
-        <NavList>
-          {data.map((planet, ind) => (
-            <NavListItem key={ind} planet={planet.name}>
-              <NavigationLink
-                to={`/${planet.name.toLowerCase()}`}
-                className={(navData) => (navData.isActive ? 'active' : '')}
-                planet={planet.name}
-              >
-                <h4>{planet.name}</h4>
-              </NavigationLink>
-            </NavListItem>
-          ))}
-        </NavList>
-      </Navigation>
-      <Burger onClick={burgerHandler} isOpen={isMobileOpen} />
-    </HeaderContainer>
+    <Header
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
+      <HeaderContaainer>
+        <Logo to="/">the planets</Logo>
+        <Navigation>
+          <NavList>
+            {data.map((planet, ind) => (
+              <NavListItem key={ind} planet={planet.name}>
+                <NavigationLink
+                  to={`/${planet.name.toLowerCase()}`}
+                  className={(navData) => (navData.isActive ? 'active' : '')}
+                  planet={planet.name}
+                >
+                  <h4>{planet.name}</h4>
+                </NavigationLink>
+              </NavListItem>
+            ))}
+          </NavList>
+        </Navigation>
+        <Burger onClick={burgerHandler} isOpen={isMobileOpen} />
+      </HeaderContaainer>
+    </Header>
   );
 };
 
-export default Header;
+export default HeaderComponent;

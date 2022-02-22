@@ -8,7 +8,7 @@ export const NavigationMobile = styled.nav`
   top: 9.7rem;
   left: 0;
   width: 100%;
-  height: calc(100vh - 9.7rem);
+
   padding: 4.5rem 2.4rem;
   display: block;
   background-color: var(--bg-main);

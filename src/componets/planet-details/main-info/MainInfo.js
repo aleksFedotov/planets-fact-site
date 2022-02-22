@@ -13,17 +13,39 @@ import {
   TextContainer,
 } from './MainInfoStyles';
 
-const MainInfo = (props) => {
+const MainInfo = ({ name, content, source, isChanging }) => {
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+      x: 50,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { delay: 1, duration: 1.5 },
+    },
+    exit: {
+      opacity: 0,
+      x: 50,
+      transition: { duration: 1 },
+    },
+  };
+
   return (
-    <InfoContainer>
+    <InfoContainer
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       <TextContainer>
-        <PlanetName>{props.name}</PlanetName>
-        <Text>{props.content}</Text>
+        <PlanetName>{name}</PlanetName>
+        <Text isChanging={isChanging}>{content}</Text>
       </TextContainer>
 
       <Source>
         <Span>Source :</Span>
-        <SourceLink href={props.source}>
+        <SourceLink href={source}>
           Wikipedia <SourceIcon icon={sourceIcon} />
         </SourceLink>
       </Source>

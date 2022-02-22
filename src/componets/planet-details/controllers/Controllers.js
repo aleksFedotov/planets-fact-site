@@ -11,8 +11,30 @@ const Controllers = (props) => {
   const changeViewHandler = (e) => {
     changeView(e.target.dataset.type);
   };
+
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+      x: 50,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { delay: 1, duration: 1.5 },
+    },
+    exit: {
+      opacity: 0,
+      x: 50,
+      transition: { duration: 1 },
+    },
+  };
   return (
-    <ContollersContainer>
+    <ContollersContainer
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       <Controller
         data-type="overview"
         onClick={changeViewHandler}

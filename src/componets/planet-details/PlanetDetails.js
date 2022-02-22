@@ -10,6 +10,7 @@ import DetailInfo from './detail-info/DetailInfo';
 
 const PlanetDetails = (props) => {
   const [view, setView] = useState('overview');
+  const [isChanging, setIsChanging] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const changeWindowWidth = () => {
@@ -29,7 +30,16 @@ const PlanetDetails = (props) => {
   );
 
   const changeViewHandler = (newView) => {
-    setView(newView);
+    if (newView === view) return;
+
+    setIsChanging(true);
+    setTimeout(() => {
+      setView(newView);
+    }, 1000);
+
+    setTimeout(() => {
+      setIsChanging(false);
+    }, 2000);
   };
 
   return (
@@ -46,11 +56,13 @@ const PlanetDetails = (props) => {
           controller={view}
           geo={view === 'geology'}
           width={windowWidth}
+          isChanging={isChanging}
         />
         <MainInfo
           name={planetData.name}
           content={planetData[view].content}
           link={planetData[view].source}
+          isChanging={isChanging}
         />
 
         <DetailInfo planetInfo={planetData} />

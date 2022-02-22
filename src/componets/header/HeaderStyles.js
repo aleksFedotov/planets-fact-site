@@ -1,16 +1,23 @@
 import styled from 'styled-components';
 import burger from '../../assets/icon-hamburger.svg';
 import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-export const HeaderContainer = styled.header`
+export const Header = styled(motion.header)`
   width: 100%;
+  z-index: 3;
+  border-bottom: 1px solid #979797;
+  padding: 0 4rem;
+`;
 
+export const HeaderContaainer = styled.div`
+  max-width: 110rem;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 4rem;
-  z-index: 3;
-  border-bottom: 1px solid #979797;
+  padding: 3rem 0;
 
   @media (max-width: 1010px) {
     flex-direction: column;
@@ -22,12 +29,15 @@ export const HeaderContainer = styled.header`
     gap: 0;
   }
 `;
-export const Logo = styled.p`
+export const Logo = styled(NavLink)`
+  text-decoration: none;
+  color: inherit;
   text-transform: uppercase;
   font-family: 'Antonio', sans-serif;
   font-weight: 500;
   font-size: 2.8rem;
   letter-spacing: -1px;
+  cursor: pointer;
 `;
 export const Navigation = styled.nav`
   max-width: 66.5rem;

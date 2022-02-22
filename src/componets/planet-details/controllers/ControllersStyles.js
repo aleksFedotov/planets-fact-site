@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const ContollersContainer = styled.div`
+export const ContollersContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -28,6 +29,7 @@ export const Controller = styled.div`
   position: relative;
   display: flex;
   align-items: stretch;
+  /* z-index: 10; */
 
   gap: 2.8rem;
   width: 100%;

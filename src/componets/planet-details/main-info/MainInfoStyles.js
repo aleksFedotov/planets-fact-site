@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const InfoContainer = styled.div`
+export const InfoContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -52,6 +53,8 @@ export const Text = styled.p`
   font-size: 1.4rem;
   line-height: 2.5rem;
   opacity: 0.75;
+  animation: ${(props) =>
+    props.isChanging ? 'textChange 2000ms ease' : 'none'};
 
   @media (max-width: 1010px) {
     font-size: 1.1rem;
@@ -61,6 +64,21 @@ export const Text = styled.p`
   @media (max-width: 700px) {
     text-align: center;
     line-height: 2.2rem;
+  }
+
+  @keyframes textChange {
+    0% {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+    50% {
+      opacity: 0;
+      transform: scaleY(1.2);
+    }
+    100% {
+      opacity: 1;
+      transform: scaleY(1);
+    }
   }
 `;
 

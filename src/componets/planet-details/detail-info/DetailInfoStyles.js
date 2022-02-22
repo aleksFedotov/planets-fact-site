@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const DetailInfoList = styled.ul`
+export const DetailInfoList = styled(motion.ul)`
   list-style: none;
   width: 100%;
   display: flex;

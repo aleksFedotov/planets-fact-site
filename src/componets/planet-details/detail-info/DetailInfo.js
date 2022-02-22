@@ -8,8 +8,29 @@ import {
 } from './DetailInfoStyles';
 
 const DetailInfo = (props) => {
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+      y: 25,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { delay: 1, duration: 1.5 },
+    },
+    exit: {
+      opacity: 0,
+      y: 25,
+      transition: { duration: 1 },
+    },
+  };
   return (
-    <DetailInfoList>
+    <DetailInfoList
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       <DetailInfoItem>
         <Parameter>Rotation Time</Parameter>
         <Value>{props.planetInfo.rotation}</Value>
