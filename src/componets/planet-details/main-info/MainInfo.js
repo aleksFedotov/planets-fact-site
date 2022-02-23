@@ -22,7 +22,7 @@ const MainInfo = ({ name, content, source, isChanging }) => {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { delay: 1, duration: 1.5 },
+      transition: { duration: 1.5 },
     },
     exit: {
       opacity: 0,

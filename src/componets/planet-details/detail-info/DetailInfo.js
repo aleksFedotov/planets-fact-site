@@ -7,7 +7,7 @@ import {
   Value,
 } from './DetailInfoStyles';
 
-const DetailInfo = (props) => {
+const DetailInfo = ({ planetInfo }) => {
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -16,7 +16,7 @@ const DetailInfo = (props) => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { delay: 1, duration: 1.5 },
+      transition: { duration: 1.5 },
     },
     exit: {
       opacity: 0,
@@ -33,19 +33,19 @@ const DetailInfo = (props) => {
     >
       <DetailInfoItem>
         <Parameter>Rotation Time</Parameter>
-        <Value>{props.planetInfo.rotation}</Value>
+        <Value>{planetInfo.rotation}</Value>
       </DetailInfoItem>
       <DetailInfoItem>
         <Parameter>Revolution Time</Parameter>
-        <Value>{props.planetInfo.revolution}</Value>
+        <Value>{planetInfo.revolution}</Value>
       </DetailInfoItem>
       <DetailInfoItem>
         <Parameter>Radius</Parameter>
-        <Value>{props.planetInfo.radius}</Value>
+        <Value>{planetInfo.radius}</Value>
       </DetailInfoItem>
       <DetailInfoItem>
         <Parameter>Average temp</Parameter>
-        <Value>{props.planetInfo.temperature}</Value>
+        <Value>{planetInfo.temperature}</Value>
       </DetailInfoItem>
     </DetailInfoList>
   );

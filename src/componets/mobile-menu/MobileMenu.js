@@ -12,9 +12,9 @@ import {
   NavigationLink,
 } from './MobileMenuStyles';
 
-const MobileMenu = (props) => {
+const MobileMenu = ({ menuToggle }) => {
   const clickHandler = () => {
-    props.menuToggle();
+    menuToggle();
   };
   return (
     <NavigationMobile>

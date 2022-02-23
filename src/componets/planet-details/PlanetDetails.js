@@ -2,13 +2,17 @@ import React, { useState, useEffect } from 'react';
 
 import { Section, Container } from './PlanetDetailsStyles';
 
+import { useParams } from 'react-router-dom';
+
 import Image from './image/Image';
 import MainInfo from './main-info/MainInfo';
 import data from '../../data.json';
 import Controllers from './controllers/Controllers';
 import DetailInfo from './detail-info/DetailInfo';
 
-const PlanetDetails = (props) => {
+const PlanetDetails = () => {
+  const { planetName } = useParams();
+
   const [view, setView] = useState('overview');
   const [isChanging, setIsChanging] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -26,7 +30,7 @@ const PlanetDetails = (props) => {
   }, []);
 
   const planetData = data.find(
-    (planet) => planet.name.toLowerCase() === props.planetName
+    (planet) => planet.name.toLowerCase() === planetName
   );
 
   const changeViewHandler = (newView) => {

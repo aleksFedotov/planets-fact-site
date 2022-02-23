@@ -24,7 +24,7 @@ const Image = ({ isChanging, geo, planet, controller, width }) => {
       scale: 1,
       rotate: 0,
       x: 0,
-      transition: { delay: 1, duration: 1.5 },
+      transition: { duration: 1.5 },
     },
     exit: {
       opacity: 0,

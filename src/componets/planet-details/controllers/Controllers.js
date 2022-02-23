@@ -7,7 +7,7 @@ import {
 } from '../controllers/ControllersStyles';
 
 const Controllers = (props) => {
-  const { changeView, currentView, width } = props;
+  const { changeView, currentView, width, planet } = props;
   const changeViewHandler = (e) => {
     changeView(e.target.dataset.type);
   };
@@ -20,7 +20,7 @@ const Controllers = (props) => {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { delay: 1, duration: 1.5 },
+      transition: { duration: 1.5 },
     },
     exit: {
       opacity: 0,
@@ -39,7 +39,7 @@ const Controllers = (props) => {
         data-type="overview"
         onClick={changeViewHandler}
         isActive={currentView === 'overview' && true}
-        planet={props.planet}
+        planet={planet}
         role="button"
       >
         <Number>01</Number>
@@ -49,7 +49,7 @@ const Controllers = (props) => {
         data-type="structure"
         onClick={changeViewHandler}
         isActive={currentView === 'structure' && true}
-        planet={props.planet}
+        planet={planet}
         role="button"
       >
         <Number>02</Number>
@@ -59,7 +59,7 @@ const Controllers = (props) => {
         data-type="geology"
         onClick={changeViewHandler}
         isActive={currentView === 'geology' && true}
-        planet={props.planet}
+        planet={planet}
         role="button"
       >
         <Number>03</Number>
