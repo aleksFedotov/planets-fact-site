@@ -69,7 +69,7 @@ const Image = ({ isChanging, geo, planet, controller, width }) => {
         isGeo={geo}
         imgWidth={imgWidth}
       >
-        <PlanetImage src={imgSource} />
+        <PlanetImage src={imgSource} alt={controller} />
       </Illustration>
     </ImageContainer>
   );

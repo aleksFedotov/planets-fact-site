@@ -13,7 +13,7 @@ import {
   TextContainer,
 } from './MainInfoStyles';
 
-const MainInfo = ({ name, content, source, isChanging }) => {
+const MainInfo = ({ name, content, link, isChanging }) => {
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -40,12 +40,14 @@ const MainInfo = ({ name, content, source, isChanging }) => {
     >
       <TextContainer>
         <PlanetName>{name}</PlanetName>
-        <Text isChanging={isChanging}>{content}</Text>
+        <Text isChanging={isChanging} data-testid="text">
+          {content}
+        </Text>
       </TextContainer>
 
       <Source>
         <Span>Source :</Span>
-        <SourceLink href={source}>
+        <SourceLink href={link}>
           Wikipedia <SourceIcon icon={sourceIcon} />
         </SourceLink>
       </Source>
