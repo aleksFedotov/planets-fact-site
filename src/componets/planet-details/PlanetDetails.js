@@ -33,7 +33,7 @@ const PlanetDetails = () => {
     (planet) => planet.name.toLowerCase() === planetName
   );
 
-  console.log(data);
+  console.log(data.find((planet) => planet.name.toLowerCase() === 'mercury'));
 
   const changeViewHandler = (newView) => {
     if (newView === view) return;
