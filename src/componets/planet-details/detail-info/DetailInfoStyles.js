@@ -40,7 +40,7 @@ export const DetailInfoItem = styled.li`
   }
 `;
 
-export const Parameter = styled.h4`
+export const Parameter = styled.h3`
   text-transform: uppercase;
   font-size: 1.1rem;
   font-weight: 700;

@@ -11,7 +11,7 @@ export const Header = styled(motion.header)`
 `;
 
 export const HeaderContaainer = styled.div`
-  max-width: 110rem;
+  max-width: 144rem;
   width: 100%;
   margin: 0 auto;
   display: flex;
