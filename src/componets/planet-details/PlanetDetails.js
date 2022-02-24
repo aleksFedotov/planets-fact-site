@@ -33,6 +33,8 @@ const PlanetDetails = () => {
     (planet) => planet.name.toLowerCase() === planetName
   );
 
+  console.log(planetData);
+
   const changeViewHandler = (newView) => {
     if (newView === view) return;
 
