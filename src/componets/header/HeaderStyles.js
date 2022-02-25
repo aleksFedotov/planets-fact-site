@@ -81,7 +81,7 @@ export const NavigationLink = styled(NavLink)`
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: var(--${(props) => props.planet});
+    background-color: var(--${(props) => props.to.state.name});
 
     transform: scale(0);
     transition: transform 250ms ease-in-out;

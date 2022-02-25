@@ -49,9 +49,11 @@ const HeaderComponent = (props) => {
             {data.map((planet, ind) => (
               <NavListItem key={ind} planet={planet.name}>
                 <NavigationLink
-                  to={`/${planet.name.toLowerCase()}`}
+                  to={{
+                    pathname: `/${planet.name.toLowerCase()}`,
+                    state: { name: planet.name },
+                  }}
                   className={(navData) => (navData.isActive ? 'active' : '')}
-                  planet={planet.name}
                 >
                   <h4>{planet.name}</h4>
                 </NavigationLink>

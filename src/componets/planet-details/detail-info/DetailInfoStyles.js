@@ -40,13 +40,14 @@ export const DetailInfoItem = styled.li`
   }
 `;
 
-export const Parameter = styled.h3`
+export const Parameter = styled.h2`
   text-transform: uppercase;
   font-size: 1.1rem;
   font-weight: 700;
   opacity: 0.5;
   letter-spacing: 1px;
   margin-bottom: 0.5rem;
+  font-family: 'Spartan', sans-serif;
 
   @media (max-width: 1010px) {
     font-size: 0.8rem;
@@ -60,9 +61,11 @@ export const Parameter = styled.h3`
   }
 `;
 
-export const Value = styled.h2`
+export const Value = styled.h3`
   font-size: 4rem;
   letter-spacing: -1.5px;
+  font-weight: 500;
+  font-family: 'Antonio', sans-serif;
 
   @media (max-width: 1010px) {
     font-size: 2.4rem;

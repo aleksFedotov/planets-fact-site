@@ -54,7 +54,10 @@ h1,h2 {
     position: relative;
     min-height: inherit;
     width: 100%;
+  
+
 }
+
 
 
 `;
